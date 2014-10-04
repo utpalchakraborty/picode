@@ -1,5 +1,6 @@
 import picamera
 import datetime as dt
+import time
 
 """
 Takes a picture, annotates with the timestamp and saves it to a
@@ -16,6 +17,7 @@ def takepic(filename = None, dirname = None):
         filename = timenow.strftime('%Y-%m-%d-%H-%M-%S') + '.jpg'
     if dirname != None:
         filename = dirname + filename
+    time.sleep(2)
     camera.capture(filename)
     camera.close()
     return filename
